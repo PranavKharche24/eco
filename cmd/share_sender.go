@@ -4,7 +4,7 @@ import (
     "fmt"
 
     "github.com/spf13/cobra"
-    "github.com/yourusername/eco/p2p"
+    "github.com/PranavKharche24/eco/p2p"
 )
 
 var shareSenderCmd = &cobra.Command{

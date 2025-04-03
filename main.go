@@ -1,7 +1,7 @@
 package main
 
 import (
-    "github.com/yourusername/eco/cmd"
+    "github.com/PranavKharche24/eco/cmd"
 )
 
 func main() {
