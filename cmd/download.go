@@ -8,7 +8,8 @@ import (
     "path/filepath"
 )
 
-const DownloadFolder = "/home/pranav/projects/eco/packages"
+// const DownloadFolder = "/home/preadaking/Desktop/GoLang/NAvinEco/eco/packages"
+ const DownloadFolder = "/home/pranav/projects/eco/packages"
 
 // DownloadAndRenameFile downloads from sourceURL, saving as newFileName in DownloadFolder.
 func DownloadAndRenameFile(sourceURL, newFileName string) error {

@@ -23,6 +23,7 @@ type PackageDB struct {
     Packages map[string]PackageInfo `json:"packages"`
 }
 
+// const PackageJSONPath = "/home/preadaking/Desktop/GoLang/NAvinEco/eco/packages.json"
 const PackageJSONPath = "/home/pranav/projects/eco/packages.json"
 
 // installCmd represents "eco install <packageName>"
