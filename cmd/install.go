@@ -23,8 +23,11 @@ type PackageDB struct {
     Packages map[string]PackageInfo `json:"packages"`
 }
 
-// const PackageJSONPath = "/home/preadaking/Desktop/GoLang/NAvinEco/eco/packages.json"
-const PackageJSONPath = "/home/pranav/projects/eco/packages.json"
+// GetPackageJSONPath computes the path to the packages.json file
+func GetPackageJSONPath() string {
+    projectRoot := GetProjectRoot()
+    return filepath.Join(projectRoot, "packages.json")
+}
 
 // installCmd represents "eco install <packageName>"
 // For example: eco install jdk-24
@@ -71,7 +74,7 @@ into /home/pranav/projects/eco/packages, then install it using "dpkg -i".`,
 
 // loadPackageDB loads the package database from the JSON file
 func loadPackageDB() (*PackageDB, error) {
-    data, err := ioutil.ReadFile(PackageJSONPath)
+    data, err := ioutil.ReadFile(GetPackageJSONPath())
     if err != nil {
         return nil, fmt.Errorf("error reading package database: %v", err)
     }

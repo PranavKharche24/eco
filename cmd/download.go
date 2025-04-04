@@ -6,10 +6,19 @@ import (
     "net/http"
     "os"
     "path/filepath"
+    "runtime"
 )
 
-// const DownloadFolder = "/home/preadaking/Desktop/GoLang/NAvinEco/eco/packages"
- const DownloadFolder = "/home/pranav/projects/eco/packages"
+// GetProjectRoot returns the root directory of the project
+func GetProjectRoot() string {
+    // This approach finds the directory containing the current file
+    _, filename, _, _ := runtime.Caller(0)
+    // Go up two directories (from cmd/download.go to project root)
+    return filepath.Dir(filepath.Dir(filename))
+}
+
+// DownloadFolder is now relative to the project root
+var DownloadFolder = filepath.Join(GetProjectRoot(), "packages")
 
 // DownloadAndRenameFile downloads from sourceURL, saving as newFileName in DownloadFolder.
 func DownloadAndRenameFile(sourceURL, newFileName string) error {
